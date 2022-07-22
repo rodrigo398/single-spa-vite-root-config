@@ -5,7 +5,7 @@ Instead of Webpack, this project uses Vite & TypeScript for each micro-frontends
 
 The examples of other micro-frontends app in the same project:
 
-- React:
+- React: https://github.com/rodrigo398/single-spa-vite-react-example
 
 This project originally refers to the great work of https://github.com/joeldenning/vite-single-spa-root-config .
 
@@ -98,8 +98,6 @@ Critical changes in the index files are displayed below:
 
   <!-- In production environment, css files of each app are not loaded correctly (the paths start with root-config's domain), so in index.html we preload them using each app's domain explicitly -->
 
-  <link rel="preload" href="<%= VITE_MF_VUE_PROD_DOMAIN %>/assets/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="<%= VITE_MF_VUE_PROD_DOMAIN %>/assets/style.css"></noscript>
   <link rel="preload" href="<%= VITE_MF_REACT_PROD_DOMAIN %>/assets/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="<%= VITE_MF_REACT_PROD_DOMAIN %>/assets/style.css"></noscript>
 <% } %>
